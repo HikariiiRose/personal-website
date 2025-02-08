@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <style>
+        body {
+            background-image: url('background.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        nav button {
+            display: inline-block;
+            font-size: 20px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        nav button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        hr {
+            width: 80%;
+            margin: 20px auto;
+            border: 1px solid white;
+        }
+
+        .content {
+            width: 80%;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 5px;
+            display: none;
+            text-align: center;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .content h2 {
+            font-size: 28px;
+        }
+
+        .content p {
+            font-size: 18px;
+        }
+
+        .image-container {
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            width: 150px;  /* Make the image smaller by setting a width */
+            height: auto;  /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My Home Page</h1>
+    <div class="image-container">
+        <img src="belle.gif" >
+    </div>
+    <nav>
+        <button onclick="showContent('home')">Home</button>
+        <button onclick="showContent('about')">About Myself</button>
+        <button onclick="showContent('contact')">Contact Info</button>
+    </nav>
+
+    <div id="home" class="content active">
+        <h2>Home</h2>
+        <p>Welcome!</p>
+        <p>Name: Reinald P. Marinay</p>
+        <p>Section: BSIT 32A1</p>
+        <P>Academic Interests: My interest is trying to do everything one by one with the best of my capabilities</P>
+    </div>
+
+    <div id="about" class="content">
+        <h2>About Myself</h2>
+        <p>Education: Currently in 3rd Year College, but the only award I have is the loyalty award in high school.</p>
+        <p>School Activities: Basketball, Video Games</p>
+        <p>Skills: Honestly, nothing.</p>
+    </div>
+
+    <div id="contact" class="content">
+        <h2>Contact Info</h2>
+        <p>Name: Reinald P. Marinay</p>
+        <p>Email: marinayreinald@gmail.com</p>
+        <p>Subject: IT ELECTIVE 3</p>
+        <P>Message: Hello! Nice to Meet You!</P>    
+    </div>
+
+    <script>
+        function showContent(contentId) {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(function(content) {
+                content.classList.remove('active');
+            });
+
+            const activeContent = document.getElementById(contentId);
+            activeContent.classList.add('active');
+        }
+    </script>
+
+</body>
+
+</html>
+
+
+
